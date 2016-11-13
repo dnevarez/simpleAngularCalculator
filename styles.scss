@@ -1,0 +1,84 @@
+body {
+  height: 100vh;
+  width: 100%;
+
+  body, div, a {
+    padding:0;
+    margin:0;
+    font-family:"Trebuchet MS", Arial,   Helvetica, sans-serif;
+  }
+
+#calculator {
+	background-color: #999;
+	width: 310px;
+	height: 440px;
+	border: 3px black solid;
+	margin: 10px auto;
+	padding: 5px;
+	border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+
+  #total {
+      height: 70px;
+      width: 300px;
+      margin:auto;
+      margin-top: 10px;
+      background-color:white;
+      margin-bottom: 5px;
+      text-align: right;
+      font-size: 60px;
+      padding: 0 5px;
+  }
+  #container {
+    display: flex;
+    width: 100%;
+
+    #numbers, #operators {
+      margin: auto;
+    }
+
+    #operators {
+      width: 33%;
+      a {
+        display: block;
+        width: 45px;
+        height: 45px;
+        float: left;
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        font-size: 39px;
+        padding: 2px;
+        margin: 5px 6px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+        background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+        border-radius: 10px;
+        }
+      }
+
+    #numbers {
+      width: 67%;
+      a {
+        display: block;
+        width: 22%;
+        height: 25%;
+        float: left;
+        text-decoration: none;
+        color: black;
+        text-align: center;
+        font-size: 32px;
+        padding: 10px;
+        margin: 1px 1px;
+        background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+        background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+        border-radius: 10px;
+        }
+        #zero {
+          width: 54%;
+        }
+       }
+    }
+  }
+}
