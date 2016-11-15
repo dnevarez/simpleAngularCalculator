@@ -18,10 +18,10 @@
   			</total-display>
         <div id="container">
     			<div id="numbers">
-            <a ng-repeat="button in buttonsLeft" id="{{button.id}}" ng-click="click(button.value)">{{button.value}}</a>
+            <a ng-repeat="button in buttonsLeft" id="{{button.id}}" ng-click="click(button.value)" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()">{{button.value}}</a>
     			</div>
           <div id="operators">
-    				<a ng-repeat="operator in operators" id="{{operator.id}}" ng-click="storeOperator()">{{operator.value}}</a>
+    				<a ng-repeat="operator in operators" id="{{operator.id}}" ng-click="storeOperator()" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()">{{operator.value}}</a>
     			</div>
         </div>
   		</calculator>
