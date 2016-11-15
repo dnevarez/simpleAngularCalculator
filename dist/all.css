@@ -14,7 +14,12 @@ body {
     padding: 5px;
     border-radius: 10px;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    position: relative; }
+    body #calculator #op {
+      position: absolute;
+      top: 40px;
+      left: 10px; }
     body #calculator #total {
       height: 70px;
       width: 300px;
@@ -24,7 +29,8 @@ body {
       margin-bottom: 5px;
       text-align: right;
       font-size: 60px;
-      padding: 0 5px; }
+      padding: 0 5px;
+      overflow: hidden; }
     body #calculator #container {
       display: flex;
       width: 100%; }

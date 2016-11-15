@@ -9,7 +9,11 @@
   <body ng-app="app">
     <main ng-controller="calcCtrl">
   		<calculator id="calculator">
+        <div id="op">
+          {{operation}}
+        </div>
   			<total-display id="total">
+
           {{totaldiv}}
   			</total-display>
         <div id="container">
