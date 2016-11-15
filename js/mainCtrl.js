@@ -172,6 +172,12 @@ $scope.storeOperator = function() {
   if(this.operator.value === '=') {
     $scope.operation = '=';
     totalEquals();
+  } else if (number.length > 0 && newnumber.length > 0) {
+    totalEquals();
+    operator = this.operator.value;
+    $scope.operation = operator;
+    newnumber = number;
+    number = "";
   } else {
     operator = this.operator.value;
     $scope.operation = operator;
@@ -198,20 +204,29 @@ $scope.click = function(x) {
   }
 }
 
-// Color change when buttons are momentarily changed when pressed. 
+// Color change when buttons are momentarily changed when pressed.
 
 $scope.mouseDown = function() {
   if(this.button) {
-    document.getElementById(this.button.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#CCCCCC), to(#C2C2C2))';
-  } else {
-    document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#CCCCCC), to(#C2C2C2))';
+      document.getElementById(this.button.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#1F1F1F), to(#141414))';
+  }
+  else {
+    if(this.operator.id === 'equals')   {
+      document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#CED600), to(#BFC52C))';
+    } else {
+      document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#1F1F1F), to(#141414))';
+    }
   }
 }
 $scope.mouseUp = function() {
   if(this.button) {
-    document.getElementById(this.button.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC))';
+    document.getElementById(this.button.id).style.background = '#282828';
   } else {
-    document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC))';
+    if (this.operator.id === 'equals') {
+      document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#FAEF57), to(#EAE26F))'
+    } else {
+      document.getElementById(this.operator.id).style.background = '#282828';
+    }
   }
 }
 
