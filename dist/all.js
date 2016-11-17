@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('app', []);
+"use strict";
 'use strict';
 
 angular.module('app').controller('calcCtrl', function ($scope) {
@@ -150,7 +151,8 @@ angular.module('app').controller('calcCtrl', function ($scope) {
     $scope.operation = operator;
 
     if (this.operator.value === '=') {
-      $scope.operation = '=';
+      operator = '=';
+      $scope.operation = operator;
       totalEquals();
     } else if (number.length > 0 && newnumber.length > 0) {
       totalEquals();
@@ -167,8 +169,8 @@ angular.module('app').controller('calcCtrl', function ($scope) {
   };
 
   // This is where all our functions will be invoked.
-  $scope.click = function (x) {
-
+  $scope.click = function () {
+    if ($scope.operation === '=') clearall();
     if (this.button.id === 'clear') {
       clear();
     } else if (this.button.id === 'clearall') {
@@ -182,6 +184,7 @@ angular.module('app').controller('calcCtrl', function ($scope) {
       number += this.button.value;
       $scope.totaldiv = number;
     }
+    console.log('op is', operator);
   };
 
   // Color change when buttons are momentarily changed when pressed.
@@ -199,13 +202,18 @@ angular.module('app').controller('calcCtrl', function ($scope) {
   };
   $scope.mouseUp = function () {
     if (this.button) {
-      document.getElementById(this.button.id).style.background = '#282828';
+      document.getElementById(this.button.id).style.background = '';
     } else {
-      if (this.operator.id === 'equals') {
-        document.getElementById(this.operator.id).style.background = '-webkit-gradient(linear, left top, left bottom, from(#FAEF57), to(#EAE26F))';
-      } else {
-        document.getElementById(this.operator.id).style.background = '#282828';
-      }
+      document.getElementById(this.operator.id).style.background = '';
+    }
+  };
+});
+
+angular.module('app').directive('dragMe', function () {
+  return {
+    restrict: 'A',
+    link: function link(scope, elem, attr, ctrl) {
+      elem.draggable();
     }
   };
 });

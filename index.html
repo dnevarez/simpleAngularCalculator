@@ -18,14 +18,17 @@
   			</total-display>
         <div id="container">
     			<div id="numbers">
-            <a ng-repeat="button in buttonsLeft" id="{{button.id}}" ng-click="click(button.value)" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()">{{button.value}}</a>
+            <a ng-repeat="button in buttonsLeft" id="{{button.id}}" ng-click="click(button.value)" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()" drag-me>{{button.value}}</a>
     			</div>
           <div id="operators">
-    				<a ng-repeat="operator in operators" id="{{operator.id}}" ng-click="storeOperator()" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()">{{operator.value}}</a>
+    				<a ng-repeat="operator in operators" id="{{operator.id}}" ng-click="storeOperator()" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()" drag-me>{{operator.value}}</a>
     			</div>
         </div>
   		</calculator>
     </main>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- <script src="https://code.jquery.ui.touch-punch.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js" charset="utf-8"></script>
     <script src="dist/all.js" charset="utf-8"></script>
   </body>
